@@ -1,0 +1,559 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 100px;
+    background: #f1f1f1;
+}
+
+button {
+    border: none;
+    padding: 0;
+    background: none;
+    outline: none;
+}
+
+.form-control, .modal-content, .btn{
+    border-radius: 0px
+}
+
+.btn {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.upload-pro-form .btn-group .btn {
+    box-shadow: none;
+}
+
+.btn.focus,
+.btn:focus,
+.btn:hover,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    outline: 0;
+}
+.pagination>li:first-child>a,
+.pagination>li:first-child>span,
+.pagination>li:last-child>a,
+.pagination>li:last-child>span {
+    border-radius: 1px;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background-color: #e7e7e7;
+    border-color: #e7e7e7;
+    color: #010101;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    color: #717171;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+section header > h2 .material-icons {
+    font-size: 32px;
+}
+
+/*==============================
+MAIN-NAVBAR
+==============================*/
+.navbar {
+    border-radius: 0;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.navbar-default {
+    background-color: #2196f3;
+}
+
+nav.navbar-default.nav-cate {
+    background-color: #009688;
+}
+
+nav.navbar-default.nav-user {
+    background-color: #00BCD4;
+}
+
+nav.navbar-default.nav-orders {
+    background-color: #FF5722;
+}
+
+nav.navbar-default.nav-dash {
+    background-color: #607D8B;
+}
+
+.navbar-default .navbar-text,
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    transition: 0.5s ease-in-out;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+    background: #3A75D7;
+    color: #E1E1E1;
+}
+
+.navbar-default.nav-cate .navbar-nav>.open>a,
+.navbar-default.nav-cate .navbar-nav>.open>a:focus,
+.navbar-default.nav-cate .navbar-nav>.open>a:hover,
+.navbar-default.nav-cate .navbar-nav>li>a:focus,
+.navbar-default.nav-cate .navbar-nav>li>a:hover {
+    background: #177970;
+    color: #E1E1E1;
+}
+
+.navbar-default.nav-user .navbar-nav>.open>a,
+.navbar-default.nav-user .navbar-nav>.open>a:focus,
+.navbar-default.nav-user .navbar-nav>.open>a:hover,
+.navbar-default.nav-user .navbar-nav>li>a:focus,
+.navbar-default.nav-user .navbar-nav>li>a:hover {
+    background: #17aec1;
+    color: #E1E1E1;
+}
+
+.navbar-default.nav-orders .navbar-nav>.open>a,
+.navbar-default.nav-orders .navbar-nav>.open>a:focus,
+.navbar-default.nav-orders .navbar-nav>.open>a:hover,
+.navbar-default.nav-orders .navbar-nav>li>a:focus,
+.navbar-default.nav-orders .navbar-nav>li>a:hover {
+    background: #ec5c2f;
+    color: #E1E1E1;
+}
+
+.navbar-default.nav-dash .navbar-nav>.open>a,
+.navbar-default.nav-dash .navbar-nav>.open>a:focus,
+.navbar-default.nav-dash .navbar-nav>.open>a:hover,
+.navbar-default.nav-dash .navbar-nav>li>a:focus,
+.navbar-default.nav-dash .navbar-nav>li>a:hover {
+    background: #7798a9;
+    color: #E1E1E1;
+}
+
+.dropzone {
+    border: 3px dashed #ddd;
+    padding: 35px 20px;
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+    z-index: 10000;
+}
+
+.dropzone.dz-clickable {
+    text-align: center;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+/*==============================
+SIDE-NAVBAR
+==============================*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 0px 0px 12px 0 rgba(0,0,0,0.2);
+}
+
+#mySidenav .fa {
+    font-size: 23px;
+    vertical-align: middle;
+} 
+
+.sidenav a,
+.sidenav p {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #717171;
+    display: block;
+    transition: 0.3s ease-in-out;
+    border-bottom: 1px solid #ddd;
+    font-weight: 400;
+}
+
+.sidenav a:not(.closebtn):hover, .offcanvas a:not(.closebtn):focus {
+    color: #4a4a4a;
+    background: #e7e7e7;
+}
+
+.sidenav a:first-child {
+    padding: 0;
+    border-bottom: 0;
+    right: 15px;
+}
+
+.sidenav a:nth-child(2) {
+    border-top: 1px solid #ddd;
+}
+
+.closebtn {
+    position: absolute;
+    top: 75px;
+    right: 50%;
+}
+
+.sidenav a.active {
+    background: #e7e7e7;
+    color: #4a4a4a;
+    font-weight: 500;
+}
+
+#mySidenav a:nth-child(2) i.material-icons {
+    color: #607D8B;
+}
+
+#mySidenav a:nth-child(3) i.material-icons {
+    color: #2196f3;
+}
+
+#mySidenav a:nth-child(4) i.material-icons {
+    color: #009688;
+}
+
+#mySidenav a:nth-child(5) i.material-icons {
+    color: #00BCD4;
+}
+
+#mySidenav a:nth-child(6) i.material-icons {
+    color: #FF5722;
+}
+
+#mySidenav a:nth-child(7) i.material-icons {
+    color: #9C27B0;
+}
+
+/*==============================
+HEAD-PAGE
+==============================*/
+.head-page header {
+    background: #1976D2;
+    color: #fff;
+    padding: 25px;
+}
+
+.head-page-add-pro header,
+.head-page-edit-pro header {
+    background: #00796B;
+    color: #fff;
+    padding: 25px;
+}
+
+.head-page-users header,
+.head-page-user-details header,
+.head-page-user-details-order header{
+    background: #0097A7;
+    color: #fff;
+    padding: 25px;
+}
+
+.head-page-dashboard header {
+    background: #455A64;
+    color: #fff;
+    padding: 25px;
+}
+
+.head-page-orders header {
+    background: #E64A19;
+    color: #fff;
+    padding: 25px;
+}
+.head-page-users  a {
+    float: right;
+    margin-left: 5px;
+    color:white;
+   
+    
+}
+.head-page header h2,
+.head-page-add-pro header h2,
+.head-page-edit-pro header h2,
+.head-page-users header h2,
+.head-page-user-details header h2,
+.head-page-user-details-order header h2,
+.head-page-orders header h2,
+.head-page-edit-home header h2,
+.head-page-edit-home-stikers header h2,
+.head-page-dashboard header h2 {
+    margin: 0;
+}
+
+.head-page-edit-pro, .head-page-user-details-order {
+    margin-top: 30px;
+}
+
+/*==============================
+#DASHBOARD
+==============================*/
+#dashboard .visitors,
+#dashboard .new-acc,
+#dashboard .reve,
+#dashboard .sold {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    position: relative;
+}
+
+#dashboard .visitors button,
+#dashboard .new-acc button,
+#dashboard .reve button,
+#dashboard .sold button {
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    border-radius: 100%;
+}
+
+#dashboard .visitors button i,
+#dashboard .new-acc button i,
+#dashboard .reve button i,
+#dashboard .sold button i {
+    font-size: 48px;
+    color: red;
+    background-color: #fff;
+}
+
+#dashboard .visitors header {
+    background-color: #67bb6a;
+    color: #fff;
+    padding: 10px;
+}
+
+#dashboard .new-acc header {
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 10px;
+}
+
+#dashboard .reve header {
+    background-color: #ffa726;
+    color: #fff;
+    padding: 10px;
+}
+
+#dashboard .sold header {
+    background-color: #78909c;
+    color: #fff;
+    padding: 10px;
+}
+
+#dashboard .visitors header h5,
+#dashboard .new-acc header h5,
+#dashboard .reve header h5,
+#dashboard .sold header h5 {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+}
+
+#dashboard .visitors article,
+#dashboard .new-acc article,
+#dashboard .reve article,
+#dashboard .sold article {
+    background-color: #fff;
+    padding: 10px 10px 5px;
+}
+
+#dashboard .visitors article ul,
+#dashboard .new-acc article ul,
+#dashboard .reve article ul,
+#dashboard .sold article ul {
+    margin-bottom: 20px;
+}
+
+#dashboard .visitors article ul li,
+#dashboard .visitors article ul li i, 
+#dashboard .new-acc article ul li,
+#dashboard .new-acc article ul li i,
+#dashboard .reve article ul li,
+#dashboard .reve article ul li i,
+#dashboard .sold article ul li,
+#dashboard .sold article ul li i {
+    vertical-align: middle;
+    font-size: 48px;
+}
+
+#dashboard .visitors article ul li:first-child i,
+#dashboard .new-acc article ul li:first-child i,
+#dashboard .reve article ul li:first-child i,
+#dashboard .sold article ul li:first-child i {
+    color: #737373;
+}
+
+#dashboard .visitors article ul li:nth-child(2),
+#dashboard .new-acc article ul li:nth-child(2),
+#dashboard .reve article ul li:nth-child(2),
+#dashboard .sold article ul li:nth-child(2) {
+    color: #505050;
+}
+
+#dashboard .visitors article ul li:nth-child(3) i,
+#dashboard .reve article ul li:nth-child(3) i,
+#dashboard .sold article ul li:nth-child(3) i {
+    color: green;
+}
+
+#dashboard .new-acc article ul li:nth-child(3) i {
+    color: red;
+}
+
+#dashboard .visitors article p,
+#dashboard .new-acc article p,
+#dashboard .reve article p,
+#dashboard .sold article p {
+    margin: 0;
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+    color: #737373;
+}
+
+/*==============================
+#CATE-ADD & #PRO-ADD
+==============================*/
+#cate-add, #pro-add, .full-user-details, #slider-edit, #stiker-edit, #dashboard {
+    background: #fff;
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#cate-add table {
+    background: #fff;
+}
+
+#cate-add table input {
+    margin-top: 10px;
+}
+
+#pro-add .upload-pro-form {
+    margin-top: 25px;
+    background-color: #fff;
+    padding: 25px;
+}
+
+.upload-pro-form .form-group {
+    margin-bottom: 20px;
+}
+
+
+.search-result .input-group-addon {
+    padding: 6px 20px;
+}
+
+.search-result form .btn {
+    box-shadow: none;
+}
+
+.search-result,
+.user-det-order {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.upload-pro-form .checkbox label {
+    margin-bottom: 10px;
+}
+/*==============================
+.USER-DETAILS
+==============================*/
+.full-user-details .material-icons {
+    font-size: 125px;
+    color: #82CEF7;
+}
+
+.full-user-details .user-det-profile .profile-det p:first-child {
+    font-size: 16px;
+    color : #a7a7a7;
+}
+
+.full-user-details .user-det-profile .profile-det p {
+    font-size: 15px;
+    color: #232323;
+    line-height: 1;
+}
+
+.user-det-profile .profile-det p i.material-icons {
+    font-size: 20px;
+    vertical-align: bottom;
+}
+
+.user-det-profile .profile-det {
+    margin-top: 25px;
+}
+
+.bill-details-top {
+    border-right: 1px solid #e7e7e7;
+}
+
+/*==============================
+#EDIT-HOME-PAGE
+==============================*/
+.navbar-default.nav-edit-home .navbar-nav>.open>a,
+.navbar-default.nav-edit-home .navbar-nav>.open>a:focus,
+.navbar-default.nav-edit-home .navbar-nav>.open>a:hover,
+.navbar-default.nav-edit-home .navbar-nav>li>a:focus,
+.navbar-default.nav-edit-home .navbar-nav>li>a:hover {
+    background-color: #b928d2;
+}
+
+
+nav.navbar-default.nav-edit-home {
+    background-color: #9C27B0;
+}
+
+.head-page-edit-home-stikers header {
+    margin-top: 25px;
+}
+
+.head-page-edit-home header,
+.head-page-edit-home-stikers header {
+    background-color: #7B1FA2;
+    color: #fff;
+    padding: 25px;
+}
+
+#stiker-edit {
+    margin-bottom: 25px;
+}
+
+@media only screen and (max-width : 768px) {
+    .navbar-header span > i.fa {
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+}
+
+
