@@ -52,20 +52,22 @@
         <!--No Indicators In Small Screen-->
         <!--Wrapper For Slides-->
         <div class="carousel slide visible-xs" id="carousel-main-sm" data-ride="carousel">
-            <?php 
-                $stmt = $con->prepare("SELECT * FROM `main-slider` LIMIT 1 ");
-                $stmt->execute();
-                $getslider = $stmt->fetchAll();
-                foreach ($getslider as $info) {
-                        echo '<div class="item active">';
-                            if(empty($info['pimg_en'])) {
-                                echo "<img src='admin/uploades/home-scren/logo.png' alt='No Images' />";
-                            } else {
-                                echo "<img src='admin/uploades/home-scren/"  . $info['mimg_en'] . "' alt='home-scren1'  />"; 
-                            }
-                        echo '</div>';
-                }
-            ?>
+            <div class="carousel-inner full-hei-slider" role'list-box'>
+                <?php 
+                    $stmt = $con->prepare("SELECT * FROM `main-slider` LIMIT 1 ");
+                    $stmt->execute();
+                    $getslider = $stmt->fetchAll();
+                    foreach ($getslider as $info) {
+                            echo '<div class="item active">';
+                                if(empty($info['pimg_en'])) {
+                                    echo "<img src='admin/uploades/home-scren/logo.png' alt='No Images' />";
+                                } else {
+                                    echo "<img src='admin/uploades/home-scren/"  . $info['mimg_en'] . "' alt='home-scren1'  />"; 
+                                }
+                            echo '</div>';
+                    }
+                ?>
+            </div>
         </div>
 
 
@@ -78,10 +80,10 @@
                         $stmt->execute();
                         $stikers4 = $stmt->fetch();
                         if(empty($stikers4['img_en'])) {
-                            echo "<img class='img-responsive center-block' src='admin/uploades/home-scren/logo.png' alt='No Images' />";
+                            echo "<img  src='admin/uploades/home-scren/logo.png' alt='No Images' />";
                         } else {
                             
-                            echo "<a href='products.php?page=search.php&show=women'><img src='admin/uploades/home-scren/"  . $stikers4['img_en'] . "' alt=''  /></a>"; 
+                            echo "<a href='products.php?page=search.php&show=women'><img class='img-responsive center-block' src='admin/uploades/home-scren/"  . $stikers4['img_en'] . "' alt=''  /></a>"; 
                         }
                         ?>
                     </div>
@@ -93,7 +95,7 @@
                         if(empty($stikers3['img_en'])) {
                             echo "<img class='img-responsive center-block' src='admin/uploades/home-scren/logo.png' alt='No Images' />";
                         } else {
-                            echo "<a href='products.php?page=search.php&show=man'><img src='admin/uploades/home-scren/"  . $stikers3['img_en'] . "' alt=''  /></a>"; 
+                            echo "<a href='products.php?page=search.php&show=man'><img class='img-responsive center-block' src='admin/uploades/home-scren/"  . $stikers3['img_en'] . "' alt=''  /></a>"; 
                         }?>
                         </div>
                     <div class="col-xs-6 col-md-3 custom-padd-right">
@@ -104,7 +106,7 @@
                             if(empty($stikers2['img_en'])) {
                                 echo "<img class='img-responsive center-block' src='admin/uploades/home-scren/logo.png' alt='No Images' />";
                             } else {
-                                echo "<a href='products.php?page=search.php&show=girs'><img src='admin/uploades/home-scren/"  . $stikers2['img_en'] . "' alt=''  /></a>"; 
+                                echo "<a href='products.php?page=search.php&show=girs'><img class='img-responsive center-block' src='admin/uploades/home-scren/"  . $stikers2['img_en'] . "' alt=''  /></a>"; 
                             }
                         ?>
                     </div>
@@ -116,7 +118,7 @@
                             if(empty($stikers1['img_en'])) {
                                 echo "<img class='img-responsive center-block' src='admin/uploades/home-scren/logo.png' alt='No Images' />";
                             } else {
-                                echo "<a href='products.php?page=search.php&show=boys'><img src='admin/uploades/home-scren/"  . $stikers1['img_en'] . "' alt=''  /></a>"; 
+                                echo "<a href='products.php?page=search.php&show=boys'><img class='img-responsive center-block' src='admin/uploades/home-scren/"  . $stikers1['img_en'] . "' alt=''  /></a>"; 
                             }
                         ?>  
                     </div>
