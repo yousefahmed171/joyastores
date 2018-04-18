@@ -498,7 +498,7 @@
                             $stmt->execute(array($catid));
                             $allCats = $stmt->fetchAll();
                         
-                             foreach($allCats as $cat ){ 
+                                foreach($allCats as $cat ){ 
                                  
                             ?>
                                     

@@ -155,7 +155,7 @@
                                 FROM  cart
                                 INNER JOIN product
                                 ON product.id_product = cart.idproduct
-                                WHERE iduser = $userid AND `status` = 1
+                                WHERE iduser = $userid AND `status` = 1 
                                 ");
         $stmt->execute(array($userid));
         $getCart = $stmt->fetchAll();
@@ -611,19 +611,35 @@
                       $action = $_GET['action'];
                     }
                       if($action == 'order') {
-                        $name       = $_POST['nameprodect'];
-                        $idpro      = $_POST['proid'];
-                        $price      = $_POST['price'];
-                        $quantity   = $_POST['quantity'];
-                        $color2      = $_POST['color'];
-                        $size2       = $_POST['size'];
-                        $address    = $_POST['address'];
+                        // $name       = $_POST['nameprodect'];
+                        // $idpro      = $_POST['proid'];
+                        // $price      = $_POST['price'];
+                        // $quantity   = $_POST['quantity'];
+                        // $color2      = $_POST['color'];
+                        // $size2       = $_POST['size'];
+                        // $address    = $_POST['address'];
 
-                        var_dump($name, $idpro, $price ,$quantity , $color2, $size2 , $address);
+                        // var_dump($name, $idpro, $price ,$quantity , $color2, $size2 , $address);
                        // $userid
-                    } else {
-                      echo 'not';
-                    }
+                       $stmt6 = $con->prepare("UPDATE `cart` SET `status` = 0  WHERE iduser = ? ");
+                      $stmt6->execute(array(
+                          $userid
+                      ));
+                       $row = $stmt6->rowCount();
+                        if($row > 0) {
+                          $_SESSION['message3s'] = "Success puy Prodect ";  
+                          header('Location: shopping-cart.php#tab5');
+                          session_write_close();
+                          exit();
+                          
+                        } else {
+                          echo 'error';
+                          var_dump($userid ,$row);
+                        }   
+                      } else {
+                        echo 'not';
+                       
+                      }
 
                   ?>
                 </div> 
