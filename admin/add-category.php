@@ -124,7 +124,7 @@ if(isset($_SESSION['username'])) {
                                 <?php
                                 $stmt = $con->prepare("SELECT * FROM category");
                                 $stmt->execute();
-                                $catid = $stmt->fetchAll();
+                                $catid = $stmt->fetch();
                 
                                 $stmt = $con->prepare("SELECT * FROM species");
                                 $stmt->execute();
