@@ -151,14 +151,14 @@
                             echo 'No';
                         }
                          ?></p>
-                        <p><button type="button" class="btn btn-defult" data-toggle="modal" data-target="#sizeModal">Size Giude</button></p>
+                        <!-- <p><button type="button" class="btn btn-defult" data-toggle="modal" data-target="#sizeModal">Size Giude</button></p>
                         <p class="social-share">Share :
 
                             <a href="#"><i class="fa fa-facebook-square fa-2x facebook-share"></i></a>
                             <a href="#"><i class="fa fa-twitter-square fa-2x twitter-share"></i></a>
                             <a href="#"><i class="fa fa-pinterest-square fa-2x pinterest-share"></i></a>
                             <a href="#"><i class="fa fa-google-plus-square fa-2x google-share"></i></a>
-                        </p>
+                        </p> -->
                         
                         <div class="row state-btn">
                                 <form action="products.php?page=search.php&show=order&id=<?php echo $cat['id_product']; ?>" method="post" class="form-inline">
@@ -210,9 +210,9 @@
                                     <div class="col-xs-12 col-md-6">
                                     <button class="btn btn-info btn-lg btn-block" type="submit" name="cart"><i class="fa fa-shopping-cart">  Add To Cart</i></button>
                                     </div>
-                                    <div class="col-xs-12 col-md-6">
+                                    <!-- <div class="col-xs-12 col-md-6">
                                         <button class="btn btn-danger btn-lg btn-block" type="submit" name="wishlist"><i class="fa fa-heart">  Add To Wishlist</i></button>
-                                    </div>
+                                    </div> -->
                                 </form>
                          
                     </div>   
@@ -427,275 +427,7 @@
 
         </section><!-- /.Container -->
         
-        <section class="container">
-            <div id="more-like" class="well">
-                <div class="row">
-                    <div class="col-xs-7">
-                        <h3>Related Product</h3>
-                    </div>
-
-                    <div class="col-xs-5">
-                    <!-- Controls -->
-                        <div class="controls pull-right">
-                            <a class="left fa fa-chevron-left fa-lg" href="#carousel-like" data-slide="prev"></a>
-                            <a class="right fa fa-chevron-right fa-lg" href="#carousel-like" data-slide="next"></a>
-                        </div>
-                    </div>
-                </div>
-                
-
-
-                <div id="carousel-like" class="carousel slide" data-ride="carousel">
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <div class="row">
-                                <div class="col-xs-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="product-details.html"><img src="img/product-9.jpg" alt="Dress-pic" class="img-responsive"></a>
-                                        <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                                            <a href="product-details.html" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Quick View" class="btn btn-default">
-                                                <span data-toggle="modal" data-target=".product-quick-modal">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </button>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Add To Cart" class="btn btn-default"><i class="fa fa-shopping-cart"></i></button>
-                                        </div>
-
-                                        <div class="caption">
-                                            <h4 class="text-center">Women Dress</h4>
-                                            <del class="price">100 EGP</del>
-                                            <p class="price" style="margin-left:10px;">50 EGP</p>
-                                            <p class="star-rating">
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </p>
-                                            <article class="discount">
-                                                <p>50% off</p>
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div><!-- /.Col -->
-
-                                <div class="col-xs-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="product-details.html"><img src="img/product-3.jpg" alt="Dress-pic" class="img-responsive"></a>
-                                        <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                                            <a href="product-details.html" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Quick View" class="btn btn-default">
-                                                <span data-toggle="modal" data-target=".product-quick-modal">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </button>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Add To Cart" class="btn btn-default"><i class="fa fa-shopping-cart"></i></button>
-                                        </div>
-
-                                        <div class="caption">
-                                            <h4 class="text-center">Women Dress</h4>
-                                            <p class="price">100 EGP</p>
-                                            <p class="star-rating">
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- /.Col -->
-
-                                <div class="col-xs-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="product-details.html"><img src="img/product-2.jpg" alt="Dress-pic" class="img-responsive"></a>
-                                        <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                                            <a href="product-details.html" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Quick View" class="btn btn-default">
-                                                <span data-toggle="modal" data-target=".product-quick-modal">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </button>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Add To Cart" class="btn btn-default"><i class="fa fa-shopping-cart"></i></button>
-                                        </div>
-
-                                        <div class="caption">
-                                            <h4 class="text-center">Women Dress</h4>
-                                            <p class="price">100 EGP</p>
-                                            <p class="star-rating">
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- /.Col -->
-
-                                <div class="col-xs-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="product-details.html"><img src="img/product-1.jpg" alt="Dress-pic" class="img-responsive"></a>
-                                        <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                                            <a href="product-details.html" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Quick View" class="btn btn-default">
-                                                <span data-toggle="modal" data-target=".product-quick-modal">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </button>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Add To Cart" class="btn btn-default"><i class="fa fa-shopping-cart"></i></button>
-                                        </div>
-
-                                        <div class="caption">
-                                            <h4 class="text-center">Women Dress</h4>
-                                            <p class="price">100 EGP</p>
-                                            <p class="star-rating">
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- /.Col -->
-                            </div><!-- /.Row -->
-
-                        </div><!-- /.Item-Active -->
-
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-xs-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="product-details.html"><img src="img/product-1.jpg" alt="Dress-pic" class="img-responsive"></a>
-                                        <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                                            <a href="product-details.html" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Quick View" class="btn btn-default">
-                                                <span data-toggle="modal" data-target=".product-quick-modal">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </button>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Add To Cart" class="btn btn-default"><i class="fa fa-shopping-cart"></i></button>
-                                        </div>
-
-                                        <div class="caption">
-                                            <h4 class="text-center">Women Dress</h4>
-                                            <p class="price">100 EGP</p>
-                                            <p class="star-rating">
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- /.Col -->
-
-                                <div class="col-xs-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="product-details.html"><img src="img/product-2.jpg" alt="Dress-pic" class="img-responsive"></a>
-                                        <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                                            <a href="product-details.html" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Quick View" class="btn btn-default">
-                                                <span data-toggle="modal" data-target=".product-quick-modal">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </button>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Add To Cart" class="btn btn-default"><i class="fa fa-shopping-cart"></i></button>
-                                        </div>
-
-                                        <div class="caption">
-                                            <h4 class="text-center">Women Dress</h4>
-                                            <p class="price">100 EGP</p>
-                                            <p class="star-rating">
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- /.Col -->
-
-                                <div class="col-xs-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="product-details.html"><img src="img/product-3.jpg" alt="Dress-pic" class="img-responsive"></a>
-                                        <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                                            <a href="product-details.html" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Quick View" class="btn btn-default">
-                                                <span data-toggle="modal" data-target=".product-quick-modal">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </button>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Add To Cart" class="btn btn-default"><i class="fa fa-shopping-cart"></i></button>
-                                        </div>
-
-                                        <div class="caption">
-                                            <h4 class="text-center">Women Dress</h4>
-                                            <p class="price">100 EGP</p>
-                                            <p class="star-rating">
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- /.Col -->
-
-                                <div class="col-xs-6 col-md-3">
-                                    <div class="thumbnail">
-                                        <a href="product-details.html"><img src="img/product-9.jpg" alt="Dress-pic" class="img-responsive"></a>
-                                        <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                                            <a href="product-details.html" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Quick View" class="btn btn-default">
-                                                <span data-toggle="modal" data-target=".product-quick-modal">
-                                                    <i class="fa fa-eye"></i>
-                                                </span>
-                                            </button>
-
-                                            <button data-toggle="tooltip" data-placement="bottom" title="Add To Cart" class="btn btn-default"><i class="fa fa-shopping-cart"></i></button>
-                                        </div>
-
-                                        <div class="caption">
-                                            <h4 class="text-center">Women Dress</h4>
-                                            <p class="price">100 EGP</p>
-                                            <p class="star-rating">
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="colored fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- /.Col -->
-                            </div><!-- /.Row -->
-
-                        </div><!-- /.Item -->
-                    </div><!-- /.Carousel-Inner -->
-                </div><!-- /.Carousel-Slider -->
-            </div><!-- /#More-Like -->
+        <!-- 
             <section id="features">
                 <div class="row text-center">
                     <div class="col-xs-4 custom-padd-right">

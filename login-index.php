@@ -8,63 +8,64 @@
     }
  include 'init.php';
 
- if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-     if(isset($_POST['login'])) {
+        if (isset($_POST['login'])) {
 
-        $user = $_POST['username'];
-        $pass = $_POST['password'];
-        $hashedpass = sha1($pass);
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+            $hashedpass = sha1($pass);
 
-        //check if the user exist in database 
+            //check if the user exist in database 
 
-        $stmt = $con->prepare("SELECT  `username`, `password` FROM `users` WHERE `username` = ? AND `password` = ?  ");
-        $stmt->execute(array($user,$hashedpass));
-        $count = $stmt->rowCount();
-        
-        if ($count > 0) {
+            $stmt = $con->prepare("SELECT  `username`, `password` FROM `users` WHERE `username` = ? AND `password` = ?  ");
+            $stmt->execute(array($user,$hashedpass));
+            $count = $stmt->rowCount();
+            
+            if ($count > 0) {
 
-        $_SESSION['user'] = $user;
-        
-        header('Location: index.php');
-        exit();
-        }
-    } else {
+            $_SESSION['user'] = $user;
+            
+            header('Location: index.php');
+            exit();
+            }
+        } else {
 
             $username   = $_POST['username'];
             $pass1      = $_POST['password'];
             $pass2      = $_POST['password2'];
             $email      = $_POST['email'];
-           
+        
             $formErrors = array();
 
-            if (isset($_POST['username'])) {
+            if (isset($username)) {
 
-                $filterUser  = filter_var($_POST['username'] , FILTER_SANITIZE_STRING) ;
+                $filterUser  = filter_var($username , FILTER_SANITIZE_STRING) ;
 
                 if (strlen($filterUser) < 4  ) {
 
                     $formErrors[] = 'Username Must Be  Larger Than 4 Characters';
                 }
             }
-            if (isset($_POST['password']) && isset($_POST['password2'])) {
+            
+            if (isset($pass1) && isset($pass2)) {
 
-                if (empty($_POST['password'])) {
+                if (empty($pass1)) {
 
-                    $formErrors[] =  'Password Can\'t Be Embty ';
+                    $formErrors[] =  'Sorry Password Cant Be Empty ';
                 }
 
-                $pass1 = sha1($_POST['password']);
-                $pass2 = sha1($_POST['password2']);
+                if (sha1($pass1) !== sha1($pass2)) {
 
-                if ($pass1 !== $pass2 ) {
+                    $formErrors[] = 'Sorry Password Is Not Match';
 
-                    $formErrors[] = 'Sorry Password Is No\'t Mutch ';
                 }
+
             }
-            if (isset($_POST['email'])) {
 
-                $filterEmail  = filter_var($_POST['email'] , FILTER_SANITIZE_EMAIL) ;
+            if (isset($email)) {
+
+                $filterEmail  = filter_var($email , FILTER_SANITIZE_EMAIL) ;
 
                 if (filter_var($filterEmail , FILTER_VALIDATE_EMAIL ) != true) {
 
@@ -77,34 +78,36 @@
             if (empty($formErrors)){
 
                 //Check If User exist in databse
-                
+            
                 $check = checkItem("username", "users", $username);
-        
-                    if ($check == 1 ) {
-                        
-                        $formErrors[] = 'Sorry This User Is exitsis';
-                        
-                    } else {
+    
+                if ($check == 1 ) {
                     
-                        // Insert UserInfo  In database
+                    $formErrors[] = 'Sorry This User Is exitsis';
+                    
+                } else {
+                
+                    // Insert UserInfo  In database
+                    
+                    $stmt = $con->prepare("INSERT INTO 
+                                        users(username, password, email,  regstatus, created) 
+                                        VALUES(:zuser, :zpass, :zemail,  0, now()) ");
+                    $stmt->execute(array(
                         
-                        $stmt = $con->prepare("INSERT INTO 
-                                            users(username, password, email,  regstatus, created) 
-                                            VALUES(:zuser, :zpass, :zemail,  0, now()) ");
-                        $stmt->execute(array(
-                            
-                            'zuser'  => $username,
-                            'zpass'  => sha1($pass1),
-                            'zemail' => $email
-                            
+                        'zuser'  => $username,
+                        'zpass'  => sha1($pass1),
+                        'zemail' => $email
+                        
                     ));
-                        
-                        //Echo Success Message 
-                        $succesMsg = 'Congrats You Are Now Register User ';
-                    }
+                    
+                    //Echo Success Message 
+                    $succesMsg = 'Congrats You Are Now Register User ';
+
+                }
+
+            }
         }
     }
- }
 ?>   
 
     <div class="container-fluid">
@@ -140,32 +143,34 @@
                     <p class="text-center">Sign into your account here:</p>
                     <form class="login" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
                     <div class="form-group">
-                        <label for="useremail">E-mail Address</label>
-                        <input class="form-control injs" id="useremail" type="text" name="username" placeholder="Enter Your User Name " autocomplete="off"/>
+                        <label for="useremail">User Name</label>
+                        <input class="form-control injs" id="useremail" type="text" name="username" placeholder="Enter Your User Name "/>
                     </div>
                     <div class="form-group">
                         <label for="password">password</label>
                         <input class="form-control injs" id="password" type="password" name="password" placeholder="Enter Your Password" autocomplete="off"/>
                     </div>
                     <input class="btn btn-primary btn-block sb-btn" name="login" type="submit" value="Login"/>
-                    </form><a class="btn btn-link" href="#">Forgotten password?</a>
-                    <div class="row text-center">
-                    <p class="bord-r-l">Or login with</p>
-                    <div class="col-xs-6"><a class="btn btn-danger btn-block" href="#"><i class="fa fa-1x fa-google">   Google</i></a></div>
-                    <div class="col-xs-6"><a class="btn btn-primary btn-block" href="#"><i class="fa fa-1x fa-facebook-official">   Facebook</i></a></div>
-                    </div>
+                    </form> <!--<a class="btn btn-link" href="#">Forgotten password?</a>-->
+                    <!-- <div class="row text-center">
+                    <p class="bord-r-l">Or login with</p> 
+                    <div class="col-xs-6"><a class="btn btn-danger btn-block" href="#"><i class="fa fa-1x fa-google">   Google</i></a></d
+                    <div class="col-xs-6"><a class="btn btn-primary btn-block" href="#"><i class="fa fa-1x fa-facebook-official">   Facebook</i></a></div> 
+                    </div> -->
                 </div>
+                 <!-- End Login Form  -->
+                 <!-- Start Signup Form -->
                 <div class="tab-pane fade" id="signup" role="tabpanel"><img class="img-responsive center-block" src="img/logo.png" alt="Joya Stores Logo" title="Joya Stores Logo"/>
                     <h4 class="text-center"> Welcome To Joya Stores</h4>
                     <p class="text-center">  Create New Account Her:</p>
                     <form class="signup" action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
                     <div class="form-group">
                         <label for="usernameu">Username</label>
-                        <input class="form-control injs" id="usernameu" type="text" name="username" placeholder="Enter Username" autocomplete="off"/>
+                        <input class="form-control injs" id="usernameu" type="text" name="username" placeholder="Enter Username" />
                     </div>
                     <div class="form-group">
                         <label for="useremailu">E-mail Address</label>
-                        <input class="form-control injs" id="useremailu" type="email" name="email" placeholder="Enter E-mail" autocomplete="off"/>
+                        <input class="form-control injs" id="useremailu" type="email" name="email" placeholder="Enter E-mail" />
                     </div>
                     <div class="form-group">
                         <label for="passwordu">password</label>
@@ -177,11 +182,11 @@
                     </div>
                     <input class="btn btn-primary btn-block sb-btn" name="Craete-Account" type="submit" value="Craete Account"/>
                     </form>
-                    <div class="row text-center">
+                    <!-- <div class="row text-center">
                     <p class="bord-r-l">Or Signup with</p>
                     <div class="col-xs-6"><a class="btn btn-danger btn-block" href="#"><i class="fa fa-1x fa-google">   Google</i></a></div>
                     <div class="col-xs-6"><a class="btn btn-primary btn-block" href="#"><i class="fa fa-1x fa-facebook-official">   Facebook</i></a></div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             </div>

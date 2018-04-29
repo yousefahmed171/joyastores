@@ -150,7 +150,7 @@
 //                                      echo "</td>"; 
                                       
                                     echo " <td>
-                                    <a href='add-category.php?do=edit&id=" . $cat['id_cat'] ." ' class='btn btn-warning'><i class='i-btn fa fa-pencil'></i> </a>
+                                    <!--<a href='add-category.php?do=edit&id=" . $cat['id_cat'] ." ' class='btn btn-warning'><i class='i-btn fa fa-pencil'></i> </a>-->
                                     <a href='add-category.php?do=delete&catid=" . $cat['id_cat'] ." ' class='btn btn-danger'><i class='i-btn fa fa-trash-o'></i> </a>
                                     </td> ";
                                     echo "</tr>";

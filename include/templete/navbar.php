@@ -143,7 +143,7 @@
                     <ul class="nav navbar-nav visible-sm visible-xs">
                         <li><a><i class="fa fa-user fa-lg"></i> Welcome <?php echo $_SESSION['user']; ?></a></li>
                         <li><a href="edit-account.php"><i class="fa fa-cog"></i> My account</a></li>
-                        <li><a href="wishlist.php"><i class="fa fa-heart"></i> My wishlist</a></li>
+                        <!-- <li><a href="wishlist.php"><i class="fa fa-heart"></i> My wishlist</a></li> -->
                         <li><a href="my-orders.php"><i class="fa fa-shopping-cart"></i> My orders</a></li>
                         <li><a href="logout.php"><i class="fa fa-sign-out"></i> Sign out</a></li>
                     </ul>
@@ -212,7 +212,7 @@
                     }
                 }
             ?>
-            <li><a href="wishlist.php"><i class="fa fa-heart"></i> My wishlist</a></li>
+            <!-- <li><a href="wishlist.php"><i class="fa fa-heart"></i> My wishlist</a></li> -->
             <li><a href="my-orders.php"><i class="fa fa-shopping-cart"></i> My orders</a></li>
             <li><a href="logout.php"><i class="fa fa-sign-out"></i> Sign out</a></li>
         </ul>
@@ -270,56 +270,56 @@
     
       
 
-        <?php
-                if (isset($_SESSION['user'])) {
-                    $getUser = $con->prepare("SELECT * FROM users WHERE `username` = ? ");
-                    $getUser->execute(array($sessionuser));
-                    $infouser = $getUser->fetch();
-                    $userid = $infouser['userid'];
-                }
-                    if(isset($_SESSION['user'])){
-                        $stmt = $con->prepare("SELECT cart.*, product.*
-                                                FROM  cart
-                                                INNER JOIN product
-                                                ON product.id_product = cart.idproduct
-                                                WHERE iduser = $userid AND `status` = 0
-                                                ");
-                        $stmt->execute(array($userid));
-                        $count2 = $stmt->rowCount();
+            <?php
+                // if (isset($_SESSION['user'])) {
+                //     $getUser = $con->prepare("SELECT * FROM users WHERE `username` = ? ");
+                //     $getUser->execute(array($sessionuser));
+                //     $infouser = $getUser->fetch();
+                //     $userid = $infouser['userid'];
+                // }
+                //     if(isset($_SESSION['user'])){
+                //         $stmt = $con->prepare("SELECT cart.*, product.*
+                //                                 FROM  cart
+                //                                 INNER JOIN product
+                //                                 ON product.id_product = cart.idproduct
+                //                                 WHERE iduser = $userid AND `status` = 0
+                //                                 ");
+                //         $stmt->execute(array($userid));
+                //         $count2 = $stmt->rowCount();
                    
-                    }
+                //     }
             ?>
         
-        <li class="dropdown">
+        <!-- <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-heart fa-lg"></i> <span class="caret"></span><span class="badge"><?php echo $count2; ?></span></a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu"> -->
             <?php
-                if (isset($_SESSION['user'])) {
-                    $getUser = $con->prepare("SELECT * FROM users WHERE `username` = ? ");
-                    $getUser->execute(array($sessionuser));
-                    $infouser = $getUser->fetch();
-                    $userid = $infouser['userid'];
-                }
-                    if(isset($_SESSION['user'])){
-                        $stmt = $con->prepare("SELECT cart.*, product.*
-                                                FROM  cart
-                                                INNER JOIN product
-                                                ON product.id_product = cart.idproduct
-                                                WHERE iduser = $userid AND `status` = 0 
-                                                ");
-                        $stmt->execute(array($userid));
-                        $getOrder = $stmt->fetchAll();
-                        foreach($getOrder as $wishlist){
-                            echo '<li><a href="product-details.php?proid='. $wishlist['id_product'].  '&pagename=' . str_replace(' ', '-', $wishlist['pro_name']) . '">'.$wishlist['pro_name'].'</a> </a></li>';
-                        }
-                    }
+                // if (isset($_SESSION['user'])) {
+                //     $getUser = $con->prepare("SELECT * FROM users WHERE `username` = ? ");
+                //     $getUser->execute(array($sessionuser));
+                //     $infouser = $getUser->fetch();
+                //     $userid = $infouser['userid'];
+                // }
+                //     if(isset($_SESSION['user'])){
+                //         $stmt = $con->prepare("SELECT cart.*, product.*
+                //                                 FROM  cart
+                //                                 INNER JOIN product
+                //                                 ON product.id_product = cart.idproduct
+                //                                 WHERE iduser = $userid AND `status` = 0 
+                //                                 ");
+                //         $stmt->execute(array($userid));
+                //         $getOrder = $stmt->fetchAll();
+                //         foreach($getOrder as $wishlist){
+                //             echo '<li><a href="product-details.php?proid='. $wishlist['id_product'].  '&pagename=' . str_replace(' ', '-', $wishlist['pro_name']) . '">'.$wishlist['pro_name'].'</a> </a></li>';
+                //         }
+                //     }
                     ?>
             
-            <li role="separator" class="divider"></li>
+            <!-- <li role="separator" class="divider"></li>
             <li><a href="wishlist.php"><i class="fa fa-heart"></i> View wishlist</a></li>
         </ul>
-        </li>
-    </ul>
+        </li> -->
+    <!-- </ul> -->
        <?php }?>
     </ul>
   

@@ -266,8 +266,8 @@
                 </div><!-- /.Upload-Pro-Form -->
             </div><!-- /.Col -->
         </div><!-- /.Row -->
-            </article><!-- /#Pro-Add -->
-        </section><!-- /.Container -->
+                    </article><!-- /#Pro-Add -->
+                </section><!-- /.Container -->
         
         <section class="head-page-edit-pro">
             <article class="container">

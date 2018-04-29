@@ -79,8 +79,7 @@
                                     <thead>
                                         <tr>
                                             <th>N</th>
-                                            <th>ID</th>
-                                            <th>Name</th>
+                                            <th>User Name</th>
                                             <th>E-Mail</th>
                                             <th>Tel Phone</th>
                                             <th>Details</th>
@@ -89,8 +88,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>N</th>
-                                            <th>ID</th>
-                                            <th>Name</th>
+                                            <th>User Name</th>
                                             <th>E-Mail</th>
                                             <th>Tel Phone</th>
                                             <th>Details</th>
@@ -102,10 +100,9 @@
                                     echo '<tr>';   
                                         static $s = 1 ; 
                                         echo '<td>' .  $s++ . '</td>';                
-                                        echo '<td> ' . $row['0'] . '</td>';
-                                        echo '<td> ' . $row['1'] . '</td>';
-                                        echo '<td> ' . $row['8'] . '</td>';
-                                        echo '<td> ' . $row['9'] . '</td>';
+                                        echo '<td> ' . $row['username'] . '</td>';
+                                        echo '<td> ' . $row['email'] . '</td>';
+                                        echo '<td> ' . $row['phone'] . '</td>';
                                         echo '<td><a href="user-details.php?userid='.$row['userid'].'" class="btn btn-info btn-block" ><i class="fa fa-info-circle"></i> More Info</a></td>';
                             }?>
                                     </tr>
@@ -307,7 +304,7 @@
           
                         // Insert UserInfo  In database
                         $stmt = $con->prepare ("
-                                                INSERT INTO `users`(`username`, `fullname`, `birth-yaer`, `birth-month`, `birth-day`, `password`,  `email`, `phone`, `regstatus`,`gender`) 
+                                                INSERT INTO `users`(`username`, `lastlname`, `birth-yaer`, `birth-month`, `birth-day`, `password`,  `email`, `phone`, `regstatus`,`gender`) 
                                                             VALUES (:user,:name,:yaer,:month,:day,:pass, :email, :phone, 1 ,:gender) ");
                         
                         $stmt->execute(array(
