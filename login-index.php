@@ -1,5 +1,7 @@
 <?php
- ob_start();  
+
+ ob_start();
+   
  session_start();
 
  $title = 'Joya Stores | login';
