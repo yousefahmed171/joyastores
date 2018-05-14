@@ -80,7 +80,7 @@
                                     </div><!-- /.Collapse -->
                                 </div><!-- /.Filters -->
 
-                                <div class="filters">
+                                <!-- <div class="filters">
                                     <button class="btn btn-defult btn-block" type="button" data-toggle="collapse" data-target="#collapseSlider" aria-expanded="false" aria-controls="collapseSlider">
                                     Price <i class="fa fa-caret-down pull-right"></i>
                                     </button>
@@ -89,11 +89,11 @@
                                         <div class="well text-center">
                                             <input type="text" class="amount" readonly style="border:0; color:#575757; font-weight:bold; text-align:center; margin-bottom:10px;">
                                             <div class="slider-range"></div>
-                                        </div><!-- /.Well -->
-                                    </div><!-- /.Collapse -->
-                                </div><!-- /.Filters -->
+                                        </div> /.Well 
+                                    </div> /.Collapse 
+                                </div> /.Filters  -->
 
-                                <div class="filters">
+                                <!-- <div class="filters">
                                     <button class="btn btn-defult btn-block" type="button" data-toggle="collapse" data-target="#collapseColor" aria-expanded="false" aria-controls="collapseColor">
                                     Colors <i class="fa fa-caret-down pull-right"></i>
                                     </button>
@@ -114,12 +114,12 @@
                                                 <input id="checkboxC3" type="checkbox">
                                                 <label for="checkboxC3">Green</label>
                                             </div>
-                                        </div><!-- /.Well -->
-                                    </div><!-- /.Collapse -->
-                                </div><!-- /.Filters -->
+                                        </div>/.Well 
+                                    </div>/.Collapse 
+                                </div> /.Filters  -->
 
 
-                                <div class="filters">
+                                <!-- <div class="filters">
                                     <button class="btn btn-defult btn-block" type="button" data-toggle="collapse" data-target="#collapseSize" aria-expanded="false" aria-controls="collapseSize">
                                     Size <i class="fa fa-caret-down pull-right"></i>
                                     </button>
@@ -148,11 +148,11 @@
                                                 <input id="checkboxXl" type="checkbox">
                                                 <label for="checkboxXl">X-large</label>
                                             </div>
-                                        </div><!-- /.Well -->
-                                    </div><!-- /.Collapse -->
-                                </div><!-- /.Filters -->
+                                        </div>.Well 
+                                    </div>.Collapse 
+                                </div>.Filters  -->
 
-                                <div class="filters">
+                                <!-- <div class="filters">
                                     <button class="btn btn-defult btn-block" type="button" data-toggle="collapse" data-target="#collapseRate" aria-expanded="false" aria-controls="collapseRate">
                                     Rate <i class="fa fa-caret-down pull-right"></i>
                                     </button>
@@ -221,9 +221,9 @@
                                                     </p>
                                                 </label>
                                             </div>
-                                        </div><!-- /.Well -->
-                                    </div><!-- /.Collapse -->
-                                </div><!-- /.Filters -->
+                                        </div> /.Well 
+                                    </div>/.Collapse 
+                                </div>Filters -->
                                 <input type="submit" class="btn btn-info btn-block filter-btn" value="Filter" />
                             </div>
                             </form>                         
@@ -255,8 +255,8 @@
                                         //echo '<p><a href="?' . $brand['id_brand']. '" type="checkbox" name="idbrand" value="' . $brand['id_brand']. '" > '.' <span></span> ' . $brand['name_en']. '</p>';
                                        echo '<div class="check-yousef">';
                                             //echo '<input type="hidden" name="idbrand">';
-                                            echo '<input  name="brand[]" value="'.$brand['id_brand'] .'" id="Acheckbox" type="checkbox">';
-                                            echo '<label for="Acheckbox">'.  $brand['name_en']. '</label>';
+                                            echo '<input  class="cat-filter-input" name="brand[]" value="'.$brand['id_brand'] .'" id="Acheckbox'.$brand['id_brand'] .'" type="checkbox">';
+                                            echo '<label class="cat-filter-label" for="Acheckbox'.$brand['id_brand'] .'">'.  $brand['name_en']. '</label>';
                                         echo    '</div>';
 
                                         
@@ -283,8 +283,8 @@
                                             // echo '<p><input type="checkbox" name="idcat" value="' . $cat['id_cat']. '" > '.' <span></span> ' . $cat['name_en']. '</p>';   
                                       echo '<div class="chec-yousef">';
                                             //echo '<input value="1" type="hidden" name="idcat">';
-                                             echo  '<input name="cat[]"  value="'.$cat['id_cat'].'" id="Acheckbox" type="checkbox">';
-                                            echo  '<label for="Acheckbox" >'.$cat['name_en'].'</label>';
+                                             echo  '<input class="cat-filter-input" name="cat[]"  value="'.$cat['id_cat'].'" id="Acheckbox'.$cat['id_cat'].'" type="checkbox">';
+                                            echo  '<label class="cat-filter-label" for="Acheckbox'.$cat['id_cat'].'" >'.$cat['name_en'].'</label>';
                                       echo '</div>';
                                         }?>
 
@@ -292,7 +292,7 @@
                                 </div><!-- /.Collapse -->
                             </div><!-- /.Filters -->
 
-                            <div class="filters hidden-xs">
+                            <!-- <div class="filters hidden-xs">
                                 <button class="btn btn-defult btn-block" type="button" data-toggle="collapse" data-target="#collapseSliderA" aria-expanded="false" aria-controls="collapseSliderA">
                                 Price <i class="fa fa-caret-down pull-right"></i>
                                 </button>
@@ -301,11 +301,21 @@
                                     <div class="well text-center">
                                         <input type="text" class="amount" readonly style="border:0; color:#575757; font-weight:bold; text-align:center; margin-bottom:10px;">
                                         <div class="slider-range"></div>
-                                    </div><!-- /.Well -->
-                                </div><!-- /.Collapse -->
-                            </div><!-- /.Filters -->
+                                    </div> /.Well 
+                                </div>< /.Collapse 
+                            </div> /.Filters  -->
 
-                            <div class="filters hidden-xs">
+                            <!-- <div class="filters hidden-xs">
+                                <button class="btn btn-default btn-block clearfix" type="button" data-toggle="collapse" data-target="#AcollapseSlider" aria-expanded="false" aria-controls="AcollapseSlider"><span class="pull-left">    Price</span><i class="fa fa-caret-down pull-right"></i></button>
+                                <div class="collapse" id="AcollapseSlider">
+                                <div class="well text-center">
+                                    <input class="amount" type="text" readonly style="border:0; color:#575757; font-weight:bold; text-align:center; margin-bottom:10px;"/>
+                                    <div class="slider-range"></div>
+                                </div>
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="filters hidden-xs">
                                 <button class="btn btn-defult btn-block" type="button" data-toggle="collapse" data-target="#collapseColorA" aria-expanded="false" aria-controls="collapseColorA">
                                 Colors <i class="fa fa-caret-down pull-right"></i>
                                 </button>
@@ -326,12 +336,12 @@
                                             <input id="AcheckboxC3" type="checkbox">
                                             <label for="AcheckboxC3">Green</label>
                                         </div>
-                                    </div><!-- /.Well -->
-                                </div><!-- /.Collapse -->
-                            </div><!-- /.Filters -->
+                                    </div> /.Well
+                                </div> /.Collapse
+                            </div> /.Filters  -->
 
 
-                            <div class="filters hidden-xs">
+                            <!-- <div class="filters hidden-xs">
                                 <button class="btn btn-defult btn-block" type="button" data-toggle="collapse" data-target="#collapseSizeA" aria-expanded="false" aria-controls="collapseSizeA">
                                 Size <i class="fa fa-caret-down pull-right"></i>
                                 </button>
@@ -360,11 +370,11 @@
                                             <input id="AcheckboxXl" type="checkbox">
                                             <label for="AcheckboxXl">X-large</label>
                                         </div>
-                                    </div><!-- /.Well -->
-                                </div><!-- /.Collapse -->
-                            </div><!-- /.Filters -->
+                                    </div> /.Well 
+                                </div> /.Collapse 
+                            </div>/.Filters  -->
 
-                            <div class="filters hidden-xs">
+                            <!-- <div class="filters hidden-xs">
                                 <button class="btn btn-defult btn-block" type="button" data-toggle="collapse" data-target="#collapseRateA" aria-expanded="false" aria-controls="collapseRateA">
                                 Rate <i class="fa fa-caret-down pull-right"></i>
                                 </button>
@@ -433,9 +443,9 @@
                                                 </p>
                                             </label>
                                         </div>
-                                    </div><!-- /.Well -->
-                                </div><!-- /.Collapse -->
-                            </div><!-- /.Filters -->
+                                    </div> /.Well 
+                                </div>/.Collapse 
+                            </div>/.Filters -->
                             <input type="submit" name="submit" class="btn btn-info btn-block filter-btn hidden-xs" value="Filter" />
                            
                         </nav>
@@ -643,6 +653,9 @@
 
                 </div><!-- /.Row -->
             </section><!-- /#Product-Panel/.Well -->
+        </div><!-- /.Container -->
+
+        <div class="container">
             <section id="features">
                 <div class="row text-center">
                     <div class="col-xs-4 custom-padd-right">
@@ -662,124 +675,10 @@
                     </div>
                 </div>
             </section>
-        </div><!-- /.Container -->
+        </div> 
 
 
-        <a class="btn btn-danger f-cart-btn" role="button"><i class="fa fa-shopping-cart 2x"></i> <span class="badge">0</span></a>
 
-        <div class="modal fade product-quick-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-body">
-                        <section id="product-details-panel" class="well">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="row">
-                                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                            <!-- Wrapper for slides -->
-                                            <div class="col-xs-12 col-md-10">
-                                                <div class="carousel-inner" role="listbox">
-
-                                                <div class="item active">
-                                                    <a href="#" class="pop"><img id="imageresource" src="img/product-9.jpg" class="img-responsive center-block"></a>
-                                                </div>
-
-                                                <div class="item">
-                                                    <a href="#" class="pop"><img id="imageresource" src="img/product-9.jpg" class="img-responsive center-block"></a>
-                                                </div>
-
-                                                <div class="item">
-                                                    <a href="#" class="pop"><img id="imageresource" src="img/product-9.jpg" class="img-responsive center-block"></a>
-                                                </div>
-
-                                                <div class="item">
-                                                    <a href="#" class="pop"><img id="imageresource" src="img/product-9.jpg" class="img-responsive center-block"></a>
-                                                </div>
-
-
-                                                <div class="item">
-                                                    <a href="#" class="pop"><img id="imageresource" src="img/product-9.jpg" class="img-responsive"></a>
-                                                </div>
-
-                                                </div>
-                                            </div>
-
-
-                                            <!-- Indicators -->
-                                            <div class="col-xs-12 col-md-2">
-                                                <ol class="carousel-indicators">
-                                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
-                                                        <img src="img/product-9.jpg" class="img-responsive">
-                                                    </li>
-                                                    <li data-target="#carousel-example-generic" data-slide-to="1">
-                                                        <img src="img/product-9.jpg" class="img-responsive">
-                                                    </li>
-                                                    <li data-target="#carousel-example-generic" data-slide-to="2">
-                                                        <img src="img/product-9.jpg" class="img-responsive">
-                                                    </li>
-                                                    <li data-target="#carousel-example-generic" data-slide-to="3">
-                                                        <img src="img/product-9.jpg" class="img-responsive">
-                                                    </li>
-                                                    <li data-target="#carousel-example-generic" data-slide-to="4">
-                                                        <img src="img/product-9.jpg" class="img-responsive center-block">
-                                                    </li>
-                                                </ol>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 product-show-info">
-                                    <header class="text-center">
-                                        <h2>Product Name Here</h2>
-                                    </header>
-                                    <p>Price : 100 EGP</p>
-                                    <p>By : Monte-Blue</p>
-                                    <p class="star-rating">Rate :
-                                        <i class="colored fa fa-star"></i>
-                                        <i class="colored fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i> ( 10 )
-                                    </p>
-                                    <p>Avalibality : Yes</p>
-
-                                    <div class="row state-btn">
-                                        <form>
-                                            <div class="col-xs-12 col-md-6">
-                                                <select class="form-control input-lg" name="size" required>
-                                                    <option disabled selected>Select Size</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-xs-12 col-md-6">
-                                                <input type="number" name="quantity" min="1" max="12" class="form-control input-lg" placeholder="Quantity" required>
-                                            </div>
-
-                                            <div class="col-xs-12 col-md-6">
-                                                <button type="submit" class="btn btn-info btn-lg btn-block"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                                            </div>
-
-                                            <div class="col-xs-12 col-md-6">
-                                                <button class="btn btn-danger btn-lg btn-block"><i class="fa fa-heart"></i> Add To Wishlist</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div><!-- /.Row -->
-                        </section><!-- /#Product-Panel/.Well -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <a href="product-details.html" type="button" class="btn btn-info">Full Details <i class="fa fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
 <?php
     include $tpl . 'footer.php'; 
     ob_end_flush(); 

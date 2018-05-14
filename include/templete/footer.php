@@ -10,7 +10,7 @@
                                     FROM  cart
                                     INNER JOIN product
                                     ON product.id_product = cart.idproduct
-                                    WHERE iduser = $userid
+                                    WHERE iduser = $userid AND `status` = 1
                                     ");
             $stmt->execute(array($userid));
             $count = $stmt->rowCount();

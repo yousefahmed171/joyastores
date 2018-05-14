@@ -31,7 +31,7 @@
                     ?>
                     </a>
                     <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                        <a href="product-details.php?proid=<?php echo $allcat['id_product'] . '&pagename=' . str_replace(' ', '-', $allcat['pro_name'])?>" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
+                        <a href="product-details.php?proid=<?php echo $allcat['id_product'] . '&pagename=' . str_replace(' ', '-', $allcat['pro_name'])?>"></a>
 
                     </div>
 
@@ -69,7 +69,7 @@
                     ?>
                     </a>
                     <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                        <a href="product-details.php?proid=<?php echo $allcat['id_product'] . '&pagename=' . str_replace(' ', '-', $allcat['pro_name'])?>" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
+                        <a href="product-details.php?proid=<?php echo $allcat['id_product'] . '&pagename=' . str_replace(' ', '-', $allcat['pro_name'])?>"></a>
 
                     </div>
 
@@ -108,7 +108,7 @@
                     ?>
                     </a>
                     <div class="btn-group after-hover hidden-sm hidden-xs" role="group">
-                        <a href="product-details.php?proid=<?php echo $allcat['id_product'] . '&pagename=' . str_replace(' ', '-', $allcat['pro_name'])?>" data-toggle="tooltip" data-placement="bottom" title="Full Details" type="button" class="btn btn-default"><i class="fa fa-search"></i></a>
+                        <a href="product-details.php?proid=<?php echo $allcat['id_product'] . '&pagename=' . str_replace(' ', '-', $allcat['pro_name'])?>" ></a>
                     </div>
 
                     <div class="caption">

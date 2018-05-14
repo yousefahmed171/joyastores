@@ -108,6 +108,7 @@
             $_2xl               =  $_POST['2xl'];
             $_3xl               =  $_POST['3xl'];
             $_4xl               =  $_POST['4xl'];
+            $color              = $_POST['color'];
 
             //formerrors
             $formerrors = array();
@@ -186,8 +187,8 @@
                     $pro_imgdata5 = rand(0 , 10000000000) . '_' . $proImg5 ;
                     move_uploaded_file($proTmp5, "uploades\img-product\\" . $pro_imgdata5);
 
-                    $stmt = $con->prepare("INSERT INTO `product`(`pro_name`, `pro_id`, `pro_size`, `pro_price`, `pro_after_sale`, `pro_sale`, `pro_seller`, `availability`, `visiblity`, `pro_feature_en`, `pro_feature_ar`, `pro_img`, `pro_img2`, `pro_img3`, `pro_img4`, `pro_img5`, `additional_information_en`, `additional_information_ar`, `xs`, `s`, `m`, `l`, `xl`, `2xl`, `3xl`, `4xl`, `idspecies`, `idcat`,`idbrand`) 
-                    VALUES (:zproname, :zproid, :zpro_size, :zpro_price, :zpro_after_sale, :zpro_sale, :zpro_seller, :zavailability, :zvisiblity, :zpro_feature_en, :zpro_feature_ar, :zproimg, :zproimg2, :zproimg3, :zproimg4, :zproimg5, :zadditional_en, :zadditional_ar, :zxs, :zs, :zm, :zl, :zxl, :z2xl, :z3xl, :z4xl, :zspecies, :zcategory, :zidbrand)
+                    $stmt = $con->prepare("INSERT INTO `product`(`pro_name`, `pro_id`, `pro_size`, `pro_price`, `pro_after_sale`, `pro_sale`, `pro_seller`, `availability`, `visiblity`, `pro_feature_en`, `pro_feature_ar`, `pro_img`, `pro_img2`, `pro_img3`, `pro_img4`, `pro_img5`, `additional_information_en`, `additional_information_ar`, `xs`, `s`, `m`, `l`, `xl`, `2xl`, `3xl`, `4xl`,`color`, `idspecies`, `idcat`,`idbrand`) 
+                    VALUES (:zproname, :zproid, :zpro_size, :zpro_price, :zpro_after_sale, :zpro_sale, :zpro_seller, :zavailability, :zvisiblity, :zpro_feature_en, :zpro_feature_ar, :zproimg, :zproimg2, :zproimg3, :zproimg4, :zproimg5, :zadditional_en, :zadditional_ar, :zxs, :zs, :zm, :zl, :zxl, :z2xl, :z3xl, :z4xl, :zcolor, :zspecies, :zcategory, :zidbrand)
                                             ");
                         $stmt->execute(array(
                             'zproname'           => $proname,
@@ -216,6 +217,7 @@
                             'z2xl'               => $_2xl, 
                             'z3xl'               => $_3xl, 
                             'z4xl'               => $_4xl,  
+                            'zcolor'             => $color,
                             'zspecies'           => $species,
                             'zcategory'          => $category,
                             'zidbrand'           => $brandd  

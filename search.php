@@ -299,7 +299,7 @@ if($show == 'men'){
 
             if(isset($_SESSION['user'])) {
 
-                $color       = $_POST['color'];
+                @$color       = $_POST['color'];
                 $size        = $_POST['size'];
                 $quantity    = $_POST['quantity'];
 
@@ -320,14 +320,8 @@ if($show == 'men'){
                                     'ziduser'       => $userid,
                                     'zidproduct'    => $id
                                         ));
-                        echo '<div class="container">';
-                        echo '<div class="row">';
-                        echo '<div class="col-xs-8">';
-                        $theMsg = "<div class='alert alert-success'>  success insert species  </div>";
-                        redirectPage($theMsg,'shopping-cart.php' , 1 );
-                        echo '</div>';
-                        echo '</div>';
-                        echo '</div>';
+                                        
+                            header("Location: shopping-cart.php");
                 } else {
                         echo '<div class="container">';
                         $theMsg = "<div class='alert alert-danger'>  You Shold delete or edit species  </div>";

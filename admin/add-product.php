@@ -160,6 +160,13 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="color" class="col-sm-2 control-label">Color</label>
+                            <div class="col-sm-10">
+                                <input name="color" type="color" class="form-control" id="color" placeholder="Color">
+                            </div>
+                        </div><!-- /.Form-Group -->
+
+                        <div class="form-group">
                             <label for="proId" class="col-sm-2 control-label">Product ID</label>
                             <div class="col-sm-10">
                                 <input name="pro_id" type="text" class="form-control" id="proId" placeholder="Product ID">

@@ -164,42 +164,75 @@
                                 <form action="products.php?page=search.php&show=order&id=<?php echo $cat['id_product']; ?>" method="post" class="form-inline">
                                     <div class="col-xs-12 form-group">
                                         <p>  Color :</p>
-                                        <div class="form-group product-option color-option " style="background-color:#800037;">
+                                        <div class="form-group product-option color-option " style="background-color:<?= $cat['color']?>;">
                                             <label>
-                                                <input type="radio" name="color" value="#800037"/><span class="glyphicon glyphicon-ok"></span>
-                                            </label>
-                                        </div>
-                                        <div class="form-group product-option color-option " style="background-color:#808;">
-                                            <label>
-                                                <input type="radio" name="color" value="#8888"/><span class="glyphicon glyphicon-ok"></span>
+                                                <input type="radio" name="color" value="<?= $cat['color']?>"/><span class="glyphicon glyphicon-ok"></span>
                                             </label>
                                         </div>
                                     </div>
                                         <div class="col-xs-12"> <!--radio-->
                                         <p>  Size : </p>
                                         <div class="product-option ">
-                                            <label>  X-S
-                                                <input type="radio" name="size" value="X-S"/>
+                                            <label>  
+                                                <?php 
+                                                if($cat['xs'] > 0) {
+                                                    echo 'X-S';
+                                                    echo '<input type="radio"  name="size" value="X-S"/>';
+                                                } else {
+                                                    echo '<span class="size-empty">X-S<span>';
+                                                }
+                                                ?>
+                                                
                                             </label>
                                         </div>
                                         <div class="product-option">
-                                            <label>  S
-                                                <input type="radio" name="size" value="S"/>
+                                            <label> 
+                                                <?php 
+                                                if($cat['s'] > 0) {
+                                                    echo 'S';
+                                                    echo '<input type="radio" name="size" value="S"/>';
+                                                } else {
+                                                    echo '<span class="size-empty">S<span>';
+                                                }
+                                                ?>
+                                                
                                                 </label>
                                         </div>
                                         <div class="product-option">
-                                            <label>  M
-                                                <input type="radio" name="size" value="M"/>
+                                            <label>  
+                                                <?php 
+                                                if($cat['m'] > 0) {
+                                                    echo 'M';
+                                                    echo '<input type="radio" name="size" value="M"/>';
+                                                } else {
+                                                    echo '<span class="size-empty">M<span>';
+                                                }
+                                                ?>
+                                                
                                             </label>
                                         </div>
                                         <div class="product-option">
-                                            <label>  L
-                                                    <input type="radio" name="size" value="L"/>
+                                            <label>  
+                                                <?php 
+                                                if($cat['l'] > 0) {
+                                                    echo 'L';
+                                                    echo '<input type="radio" name="size" value="L"/>';
+                                                } else {
+                                                    echo '<span class="size-empty">L<span>';
+                                                }
+                                                ?>
                                             </label>
                                         </div>
                                         <div class="product-option">
-                                            <label>  X-L
-                                                <input type="radio" name="size" value="X-L"/>
+                                            <label>  
+                                                <?php 
+                                                if($cat['xl'] > 0) {
+                                                    echo 'XL';
+                                                    echo '<input type="radio" name="size" value="X-L"/>';
+                                                } else {
+                                                    echo '<span class="size-empty">X-L<span>';
+                                                }
+                                                ?>
                                             </label>
                                         </div>
                                     </div>

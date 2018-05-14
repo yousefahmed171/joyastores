@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2018 at 01:54 AM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 5.5.30
+-- Generation Time: May 07, 2018 at 08:24 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -44,7 +46,8 @@ CREATE TABLE `address` (
 
 INSERT INTO `address` (`id_address`, `country`, `city`, `region_name`, `street_name`, `building_name`, `appartment_number`, `Notes`, `userid`) VALUES
 (7, 'egypt', 'Cairo', 'naser city', 'eltwfqye', '130', '111', 'Egy Bank city', 1),
-(8, 'EGYPT', 'Cairo', 'naser', 'naser', '12582', '125', 'BETTON EGY BANK', 1);
+(8, 'EGYPT', 'Cairo', 'naser', 'naser', '12582', '125', 'BETTON EGY BANK', 1),
+(9, 'EGYPT', 'Cairo', '36st ebri', 'naser', '25', '1256', 'BETTON EGY BANK', 11);
 
 -- --------------------------------------------------------
 
@@ -98,9 +101,20 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id_order`, `color`, `size`, `quantity`, `total`, `timenow`, `datanow`, `delivery`, `address`, `approve`, `shiped`, `archived`, `status`, `iduser`, `idproduct`) VALUES
-(44, '#8888', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', 'Cairo, naser city , eltwfqye , 130 , 111, Egy Bank city', 0, 0, 0, 1, 1, 52),
-(45, '#8888', 'M', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', 'Cairo, naser city , eltwfqye , 130 , 111, Egy Bank city', 0, 0, 0, 1, 1, 52),
-(46, '#8888', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', 'Cairo, naser city , eltwfqye , 130 , 111, Egy Bank city', 0, 0, 0, 1, 1, 53);
+(44, '#8888', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', 'Cairo, naser city , eltwfqye , 130 , 111, Egy Bank city', 0, 0, 0, 0, 1, 52),
+(45, '#8888', 'M', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', 'Cairo, naser city , eltwfqye , 130 , 111, Egy Bank city', 0, 0, 0, 0, 1, 52),
+(46, '#8888', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', 'Cairo, naser city , eltwfqye , 130 , 111, Egy Bank city', 0, 0, 0, 0, 1, 53),
+(47, '#800037', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 48),
+(48, '#8888', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 58),
+(49, '#800037', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 0, 11, 52),
+(50, '#800037', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 11, 52),
+(51, '#8888', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 58),
+(52, '#8888', 'M', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 58),
+(53, '#8888', 'M', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 49),
+(54, '#8888', 'M', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 49),
+(55, '#2b00f4', 'X-S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 60),
+(56, '', 'S', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 49),
+(57, '#2b00f4', 'M', '1', 0, '00:00:00', '0000-00-00', ' Cash on Delivery', '', 0, 0, 0, 1, 1, 60);
 
 -- --------------------------------------------------------
 
@@ -132,7 +146,6 @@ INSERT INTO `category` (`id_cat`, `name_en`, `name_ar`, `description`, `dataed`,
 (14, 'Jaket - Boys', 'جاكت', 'kids', '2018-01-28 18:34:43', 27),
 (15, 'T-Shert - Boys', 'تيشيرت', 'kids', '2018-01-28 18:35:00', 27),
 (16, 'Begama - Girs', 'بيجامة', 'Baby', '2018-01-28 18:33:15', 28),
-(18, 'Bantalon  - Girs', 'بنطلون', 'Baby', '2018-01-28 18:33:31', 28),
 (19, 'qameus  home', 'قميص بيت ', 'women ', '2018-02-01 00:17:45', 26);
 
 -- --------------------------------------------------------
@@ -244,6 +257,7 @@ CREATE TABLE `product` (
   `2xl` int(11) NOT NULL,
   `3xl` int(11) NOT NULL,
   `4xl` int(11) NOT NULL,
+  `color` varchar(50) NOT NULL,
   `pro_price` int(11) NOT NULL,
   `pro_after_sale` int(11) NOT NULL,
   `pro_sale` int(11) NOT NULL,
@@ -261,29 +275,31 @@ CREATE TABLE `product` (
   `pro_img5` varchar(255) NOT NULL,
   `idspecies` int(11) NOT NULL,
   `idcat` int(11) NOT NULL,
-  `idbrand` int(11) NOT NULL
+  `idbrand` int(11) NOT NULL,
+  `id_suppliers` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id_product`, `pro_name`, `pro_id`, `pro_size`, `xs`, `s`, `m`, `l`, `xl`, `2xl`, `3xl`, `4xl`, `pro_price`, `pro_after_sale`, `pro_sale`, `pro_seller`, `availability`, `visiblity`, `pro_feature_en`, `pro_feature_ar`, `additional_information_en`, `additional_information_ar`, `pro_img`, `pro_img2`, `pro_img3`, `pro_img4`, `pro_img5`, `idspecies`, `idcat`, `idbrand`) VALUES
-(43, 't-shert + bantalon ', 1, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 250, 150, 10, 'Qaudro', 0, 1, 'good, whit, color', '', 'clen_cold, machenauto', '', '669488453_product-1.jpg', '1107422891_product-2.jpg', '349245936_product-3.jpg', '86622975_product-4.jpg', '1050061526_product-1.jpg', 27, 15, 5),
-(44, 'begama banaty', 301, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 250, 200, 0, 'Lara', 0, 1, 'Good,Best', '', '', '', '965073758_l1-1.jpg', '608297260_l1-3.jpg', '738812652_l1-2.jpg', '1194820439_l1-2.jpg', '908443934_l1-1.jpg', 26, 11, 5),
-(45, 'begama banaty', 302, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 350, 250, 0, 'Lara', 0, 1, 'Best,Good', '', '', '', '1149981322_l5-1.jpg', '295241051_l5-2.jpg', '170836171_l5-3.jpg', '1129971544_l5-4.jpg', '427563778_l5-5.jpg', 26, 12, 5),
-(46, 'qameus home ', 303, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 280, 230, 0, 'Lara', 0, 1, '', '', '', '', '1038399914_l10-3.jpg', '669230262_l10-4.jpg', '153924681_l11-1.jpg', '13684106_l11-3.jpg', '304277725_l11-4.jpg', 26, 19, 5),
-(47, 'qameus home', 304, 'XXX-Large,', 0, 0, 0, 0, 0, 0, 0, 0, 280, 220, 0, 'Mrshemlo', 0, 1, '', '', '', '', '164037150_m4-1.jpg', '1402362720_m4-2.jpg', '991538304_m4-3.jpg', '342317820_m5-1.jpg', '587297750_m5-2.jpg', 26, 19, 5),
-(48, 'Blover', 305, 'XXX-Large,', 0, 0, 0, 0, 0, 0, 0, 0, 350, 280, 0, 'Legato', 0, 1, 'Good,Turke', '', '', '', '637214617_1.jpg', '365641045_2.jpg', '705979403_3.jpg', '502223919_4.jpg', '303115867_1.jpg', 25, 10, 5),
-(49, 'Blover', 306, 'XXX-Large,', 0, 0, 0, 0, 0, 0, 0, 0, 380, 280, 0, 'Legato', 0, 1, '', '', '', '', '1404040959_5.jpg', '843982326_6.jpg', '408371604_7.jpg', '1287639991_8.jpg', '340123199_5.jpg', 25, 10, 5),
-(52, 'Sweatshirt', 5003, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 320, 240, 20, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately\r\n\r\n', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '875223399_5.jpg', '156291429_6.jpg', '998724611_7.jpg', '795141254_8.jpg', '1231698675_5.jpg', 25, 10, 5),
-(53, 'Sweatshirt', 5004, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 360, 320, 10, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '1028459572_1.jpg', '1326282530_2.jpg', '630415595_3.jpg', '638032221_4.jpg', '1269953929_1.jpg', 25, 10, 5),
-(54, 'Sweatshirt', 5001, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 350, 320, 20, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '593537359_9.jpg', '518016583_10.jpg', '107708548_11.jpg', '1365484483_12.jpg', '871522666_10.jpg', 25, 10, 5),
-(55, 'Sweatshirt', 5002, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 360, 320, 20, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '590137848_5.jpg', '1359244875_6.jpg', '1094728515_7.jpg', '706108499_6.jpg', '273940319_7.jpg', 25, 10, 5),
-(56, 'Sweatshirt', 5008, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 390, 320, 10, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '308753030_12.jpg', '718286493_11.jpg', '830212156_12.jpg', '317488482_10.jpg', '1251837549_9.jpg', 25, 10, 5),
-(57, 'Sweatshirt', 5006, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, 400, 350, 20, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '574130025_2.jpg', '55037648_3.jpg', '30810755_4.jpg', '100048891_1.jpg', '1279679111_4.jpg', 25, 10, 5),
-(58, 'jacket', 2569, 'XXX-Large', 0, 0, 0, 0, 0, 0, 0, 0, 450, 360, 20, 'Marshemlo', 0, 1, 'Soft and comfortable rich cotton fabric,\r\nEach item sold separately\r\n\r\n', 'Soft and comfortable rich cotton fabric,\r\nEach item sold separately\r\n\r\n', 'SKU 	GI121AT07DNG,\r\nColor 	Grey,\r\nSize shown in image 	S,\r\nStyle Type 	Slogan,\r\nSupplier Style No. 	TOPC2,\r\nProduct Material 	Cotton,\r\nModel Measurements 	Bust: 81 cm - Waist: 63 cm - Hips: 91 cm,\r\nModel Height 	173 cm,\r\nWashing Instructions 	Wash according to instructions on Care Label.,\r\nNeck Type 	Round Neck,\r\nApparel Type 	T-shirt', 'SKU 	GI121AT07DNG,\r\nColor 	Grey,\r\nSize shown in image 	S,\r\nStyle Type 	Slogan,\r\nSupplier Style No. 	TOPC2,\r\nProduct Material 	Cotton,\r\nModel Measurements 	Bust: 81 cm - Waist: 63 cm - Hips: 91 cm,\r\nModel Height 	173 cm,\r\nWashing Instructions 	Wash according to instructions on Care Label.,\r\nNeck Type 	Round Neck,\r\nApparel Type 	T-shirt', '1288887912_m57-1.jpg', '13468947_m57-2.jpg', '214728588_m57-3.jpg', '1067145143_m57-1.jpg', '1070458591_m57-3.jpg', 26, 12, 5),
-(59, 'Tailored Blazer ', 36985, 'XXX-Large', 9, 10, 10, 5, 2, 3, 2, 1, 350, 280, 20, 'Marshemlo', 0, 1, 'Dual mock flap over pockets,\r\nEach item sold separately\r\n', 'Dual mock flap over pockets,\r\nEach item sold separately\r\n', 'SKU 	DO860AT71QHK,\r\nColor 	Pink,\r\nProduct Material 	73% Polyester 19% Viscose 8% Elastane,\r\nSize shown in image 	S,\r\nSupplier Style No. 	66902442,\r\nModel Measurements 	Bust: 89 cm - Waist: 65 cm - Hips: 90 cm,\r\nModel Height 	178 cm,\r\nWashing Instructions 	Wash according to instructions on Care Label.,\r\nNeck Type 	Collar Neck,\r\nApparel Type 	Blazer', 'SKU 	DO860AT71QHK,\r\nColor 	Pink,\r\nProduct Material 	73% Polyester 19% Viscose 8% Elastane,\r\nSize shown in image 	S,\r\nSupplier Style No. 	66902442,\r\nModel Measurements 	Bust: 89 cm - Waist: 65 cm - Hips: 90 cm,\r\nModel Height 	178 cm,\r\nWashing Instructions 	Wash according to instructions on Care Label.,\r\nNeck Type 	Collar Neck,\r\nApparel Type 	Blazer', '250746189_m63-1.jpg', '828964234_m63-2.jpg', '644142733_m63-3.jpg', '1275031679_m63-4.jpg', '1014818497_m63-1.jpg', 26, 12, 5);
+INSERT INTO `product` (`id_product`, `pro_name`, `pro_id`, `pro_size`, `xs`, `s`, `m`, `l`, `xl`, `2xl`, `3xl`, `4xl`, `color`, `pro_price`, `pro_after_sale`, `pro_sale`, `pro_seller`, `availability`, `visiblity`, `pro_feature_en`, `pro_feature_ar`, `additional_information_en`, `additional_information_ar`, `pro_img`, `pro_img2`, `pro_img3`, `pro_img4`, `pro_img5`, `idspecies`, `idcat`, `idbrand`, `id_suppliers`) VALUES
+(43, 't-shert + bantalon ', 1, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 250, 150, 10, 'Qaudro', 0, 1, 'good, whit, color', '', 'clen_cold, machenauto', '', '669488453_product-1.jpg', '1107422891_product-2.jpg', '349245936_product-3.jpg', '86622975_product-4.jpg', '1050061526_product-1.jpg', 27, 15, 5, 0),
+(44, 'begama banaty', 301, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 250, 200, 0, 'Lara', 0, 1, 'Good,Best', '', '', '', '965073758_l1-1.jpg', '608297260_l1-3.jpg', '738812652_l1-2.jpg', '1194820439_l1-2.jpg', '908443934_l1-1.jpg', 26, 11, 5, 0),
+(45, 'begama banaty', 302, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 350, 250, 0, 'Lara', 0, 1, 'Best,Good', '', '', '', '1149981322_l5-1.jpg', '295241051_l5-2.jpg', '170836171_l5-3.jpg', '1129971544_l5-4.jpg', '427563778_l5-5.jpg', 26, 12, 5, 0),
+(46, 'qameus home ', 303, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 280, 230, 0, 'Lara', 0, 1, '', '', '', '', '1038399914_l10-3.jpg', '669230262_l10-4.jpg', '153924681_l11-1.jpg', '13684106_l11-3.jpg', '304277725_l11-4.jpg', 26, 19, 5, 0),
+(47, 'qameus home', 304, 'XXX-Large,', 0, 0, 0, 0, 0, 0, 0, 0, '', 280, 220, 0, 'Mrshemlo', 0, 1, '', '', '', '', '164037150_m4-1.jpg', '1402362720_m4-2.jpg', '991538304_m4-3.jpg', '342317820_m5-1.jpg', '587297750_m5-2.jpg', 26, 19, 5, 0),
+(48, 'Blover', 305, 'XXX-Large,', 0, 0, 0, 0, 0, 0, 0, 0, '', 350, 280, 0, 'Legato', 0, 1, 'Good,Turke', '', '', '', '637214617_1.jpg', '365641045_2.jpg', '705979403_3.jpg', '502223919_4.jpg', '303115867_1.jpg', 25, 10, 5, 0),
+(49, 'Blover', 306, 'XXX-Large,', 0, 0, 0, 0, 0, 0, 0, 0, '', 380, 280, 0, 'Legato', 0, 1, '', '', '', '', '1404040959_5.jpg', '843982326_6.jpg', '408371604_7.jpg', '1287639991_8.jpg', '340123199_5.jpg', 25, 10, 5, 0),
+(52, 'Sweatshirt', 5003, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 320, 240, 20, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately\r\n\r\n', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '875223399_5.jpg', '156291429_6.jpg', '998724611_7.jpg', '795141254_8.jpg', '1231698675_5.jpg', 25, 10, 5, 0),
+(53, 'Sweatshirt', 5004, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 360, 320, 10, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '1028459572_1.jpg', '1326282530_2.jpg', '630415595_3.jpg', '638032221_4.jpg', '1269953929_1.jpg', 25, 10, 5, 0),
+(54, 'Sweatshirt', 5001, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 350, 320, 20, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '593537359_9.jpg', '518016583_10.jpg', '107708548_11.jpg', '1365484483_12.jpg', '871522666_10.jpg', 25, 10, 5, 0),
+(55, 'Sweatshirt', 5002, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 360, 320, 20, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '590137848_5.jpg', '1359244875_6.jpg', '1094728515_7.jpg', '706108499_6.jpg', '273940319_7.jpg', 25, 10, 5, 0),
+(56, 'Sweatshirt', 5008, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 390, 320, 10, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '308753030_12.jpg', '718286493_11.jpg', '830212156_12.jpg', '317488482_10.jpg', '1251837549_9.jpg', 25, 10, 5, 0),
+(57, 'Sweatshirt', 5006, 'X-small,', 0, 0, 0, 0, 0, 0, 0, 0, '', 400, 350, 20, 'Legato', 0, 1, 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', 'Comfortable poly-cotton blend french terry fabric,\r\nEmbroidered Tommy Hilfiger signature branding,\r\nEach item sold separately', '', '', '574130025_2.jpg', '55037648_3.jpg', '30810755_4.jpg', '100048891_1.jpg', '1279679111_4.jpg', 25, 10, 5, 0),
+(58, 'jacket', 2569, 'XXX-Large', 0, 0, 0, 0, 0, 0, 0, 0, '', 450, 360, 20, 'Marshemlo', 0, 1, 'Soft and comfortable rich cotton fabric,\r\nEach item sold separately\r\n\r\n', 'Soft and comfortable rich cotton fabric,\r\nEach item sold separately\r\n\r\n', 'SKU 	GI121AT07DNG,\r\nColor 	Grey,\r\nSize shown in image 	S,\r\nStyle Type 	Slogan,\r\nSupplier Style No. 	TOPC2,\r\nProduct Material 	Cotton,\r\nModel Measurements 	Bust: 81 cm - Waist: 63 cm - Hips: 91 cm,\r\nModel Height 	173 cm,\r\nWashing Instructions 	Wash according to instructions on Care Label.,\r\nNeck Type 	Round Neck,\r\nApparel Type 	T-shirt', 'SKU 	GI121AT07DNG,\r\nColor 	Grey,\r\nSize shown in image 	S,\r\nStyle Type 	Slogan,\r\nSupplier Style No. 	TOPC2,\r\nProduct Material 	Cotton,\r\nModel Measurements 	Bust: 81 cm - Waist: 63 cm - Hips: 91 cm,\r\nModel Height 	173 cm,\r\nWashing Instructions 	Wash according to instructions on Care Label.,\r\nNeck Type 	Round Neck,\r\nApparel Type 	T-shirt', '1288887912_m57-1.jpg', '13468947_m57-2.jpg', '214728588_m57-3.jpg', '1067145143_m57-1.jpg', '1070458591_m57-3.jpg', 26, 12, 5, 0),
+(59, 'Tailored Blazer ', 36985, 'XXX-Large', 9, 10, 10, 5, 2, 3, 2, 1, '', 350, 280, 20, 'Marshemlo', 0, 1, 'Dual mock flap over pockets,\r\nEach item sold separately\r\n', 'Dual mock flap over pockets,\r\nEach item sold separately\r\n', 'SKU 	DO860AT71QHK,\r\nColor 	Pink,\r\nProduct Material 	73% Polyester 19% Viscose 8% Elastane,\r\nSize shown in image 	S,\r\nSupplier Style No. 	66902442,\r\nModel Measurements 	Bust: 89 cm - Waist: 65 cm - Hips: 90 cm,\r\nModel Height 	178 cm,\r\nWashing Instructions 	Wash according to instructions on Care Label.,\r\nNeck Type 	Collar Neck,\r\nApparel Type 	Blazer', 'SKU 	DO860AT71QHK,\r\nColor 	Pink,\r\nProduct Material 	73% Polyester 19% Viscose 8% Elastane,\r\nSize shown in image 	S,\r\nSupplier Style No. 	66902442,\r\nModel Measurements 	Bust: 89 cm - Waist: 65 cm - Hips: 90 cm,\r\nModel Height 	178 cm,\r\nWashing Instructions 	Wash according to instructions on Care Label.,\r\nNeck Type 	Collar Neck,\r\nApparel Type 	Blazer', '250746189_m63-1.jpg', '828964234_m63-2.jpg', '644142733_m63-3.jpg', '1275031679_m63-4.jpg', '1014818497_m63-1.jpg', 26, 12, 5, 0),
+(60, 'T-Shert-Blover', 0, 'X-small', 1, 0, 1, 0, 10, 1, 2, 1, '#2b00f4', 350, 250, 50, 'LEGATO', 0, 1, 'goood,good', 'goood,good', 'goood,good', 'goood,good', '_1.jpg', '_2.jpg', '_3.jpg', '_4.jpg', '_5.jpg', 25, 10, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -311,7 +327,8 @@ INSERT INTO `rate` (`id_rate`, `rate`, `pro_id`, `user_id`) VALUES
 (30, 2, 43, 1),
 (31, 5, 52, 1),
 (32, 3, 48, 1),
-(33, 3, 46, 1);
+(33, 3, 46, 1),
+(34, 4, 47, 1);
 
 -- --------------------------------------------------------
 
@@ -355,8 +372,7 @@ INSERT INTO `species` (`id_species`, `name_en`, `name_ar`, `dataed`) VALUES
 (25, 'Men Clothing', 'ملابس رجالي ', '2018-01-27 13:13:23'),
 (26, 'Women Clothing', 'ملابس نسائي ', '2018-01-27 13:14:02'),
 (27, 'Boys Clothing', 'ملابس ولادي ', '2018-01-27 13:14:34'),
-(28, 'Girs Clothing', 'ملابس بناتي ', '2018-01-27 13:14:55'),
-(29, 'Baby Clothing', 'حديثي الولادة ', '2018-01-28 18:30:24');
+(28, 'Girs Clothing', 'ملابس بناتي ', '2018-01-27 13:14:55');
 
 -- --------------------------------------------------------
 
@@ -383,6 +399,34 @@ INSERT INTO `stikers` (`id`, `img_en`, `img_ar`, `name`, `link`, `type`, `select
 (4, '94451905_girls-en.png', '48556519_girls-ar.png', 'Girs', 'http://www.google.com', '2', ''),
 (5, '6896972_men-en.png', '8193969_men-ar.png', 'Man', 'http://www.google.com', '3', ''),
 (6, '48004150_women-en.png', '17001342_women-ar.png', 'Women', 'http://www.google.com', '4', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `store`
+--
+
+CREATE TABLE `store` (
+  `id_store` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `number` varchar(30) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `idsuppliers` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suppliers`
+--
+
+CREATE TABLE `suppliers` (
+  `id_suppliers` int(11) NOT NULL,
+  `name_suppliers` varchar(50) NOT NULL,
+  `phone_suppliers` varchar(20) NOT NULL,
+  `email_suppliers` varchar(50) NOT NULL,
+  `address_suppliers` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -420,26 +464,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userid`, `username`, `firstname`, `lastlname`, `birth-yaer`, `birth-month`, `birth-day`, `password`, `gender`, `email`, `phone`, `created`, `country`, `city`, `street-name`, `building-number`, `appartment-no`, `specialinfo`, `groupid`, `truststatus`, `regstatus`) VALUES
 (1, 'yousef', 'yousef', 'yousef ahmed', 1994, 12, 3, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Male', 'yousefahmed171@gmail.com', '01010737794', '0000-00-00 00:00:00', 'egypt', 'cairo', 'street number 7 ', '315', 2, 'butoun Goverment Ouber', 1, 0, 0),
-(4, 'hassan', '', 'hassn ahmed', 1994, 12, 12, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'male', 'ahmed@gmail.com', '52525655', '0000-00-00 00:00:00', 'egypt', 'cairo', 'naser', '113', 0, '', 0, 0, 1),
-(6, 'ali ali', '', 'alialia', 1994, 5, 25, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2', 'emlail@gmail.com', '2856', '0000-00-00 00:00:00', '', '', '', '', 0, '', 0, 0, 1),
+(4, 'hassan', '', 'hassn ahmed', 1994, 12, 12, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'male', 'ahmed@gmail.com', '01077936895', '0000-00-00 00:00:00', 'egypt', 'cairo', 'naser', '113', 0, '', 0, 0, 1),
 (7, 'sara', 'sara', 'ahmed', 1994, 12, 3, '10a34637ad661d98ba3344717656fcc76209c2f8', 'Female', 'sara@gmail.com', '01010797793', '0000-00-00 00:00:00', 'egypt', 'cairo', 'naser city', '325', 0, '', 1, 0, 1),
-(11, 'ahmed', '', 'ahmed yousef', 1996, 12, 12, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'male', 'ahmed@gmail.com', '1091709070', '2018-01-23 00:00:00', '', '', '', '', 0, '', 0, 0, 0),
-(12, 'tamer', '', '', 0000, 0, 0, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '', 'tamer@gmail.com', '0', '2018-01-29 20:54:56', '', '', '', '', 0, '', 0, 0, 0),
-(15, 'ahmed', '', '', 0000, 0, 0, '', '', '', '0', '0000-00-00 00:00:00', '', '', '', '', 0, '', 0, 0, 0),
-(18, 'samer', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'samer@gmail.com', '0', '2018-03-07 12:14:35', '', '', '', '', 0, '', 0, 0, 0),
-(20, 'nora', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'nora@gmail.com', '0', '2018-03-07 15:57:31', '', '', '', '', 0, '', 0, 0, 0),
-(21, 'dena', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'dena@gmail.com', '0', '2018-03-07 15:59:52', '', '', '', '', 0, '', 0, 0, 0),
-(22, 'abdo', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'abdo@gmail.com', '0', '2018-03-07 16:00:36', '', '', '', '', 0, '', 0, 0, 0),
-(23, 'tons', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'tons@gmail.com', '0', '2018-03-07 16:02:56', '', '', '', '', 0, '', 0, 0, 0),
-(24, 'tonb', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'tonb@gmail.com', '0', '2018-03-07 16:03:47', '', '', '', '', 0, '', 0, 0, 0),
-(25, 'boys', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'boys@gmail.com', '0', '2018-03-07 16:04:48', '', '', '', '', 0, '', 0, 0, 0),
-(26, 'soma', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'soma@gmail.com', '0', '2018-03-07 16:06:57', '', '', '', '', 0, '', 0, 0, 0),
-(27, 'bamby', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'bamby@gmail.com', '0', '2018-03-07 16:09:13', '', '', '', '', 0, '', 0, 0, 0),
-(28, 'none', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'none@gmail.com', '0', '2018-03-07 16:24:11', '', '', '', '', 0, '', 0, 0, 0),
-(29, 'bant', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'bant@gmail.com', '0', '2018-03-07 16:25:14', '', '', '', '', 0, '', 0, 0, 0),
-(30, 'soso', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'soso@gmail.com', '0', '2018-03-07 16:27:09', '', '', '', '', 0, '', 0, 0, 0),
-(31, 'nonoe', '', '', 0000, 0, 0, '9adcb29710e807607b683f62e555c22dc5659713', '', 'non@gmail.com', '0', '2018-03-07 16:27:56', '', '', '', '', 0, '', 0, 0, 0),
-(32, 'yousef', '', 'yousef ahmed', 1994, 12, 3, '', 'Mel', '', '', '0000-00-00 00:00:00', '', '', '', '', 0, '', 0, 0, 0);
+(11, 'ahmed', 'ahmed', 'yousef', 1996, 12, 12, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Male', 'ahmed@gmail.com', '01091709070', '2018-01-23 00:00:00', '', '', '', '', 0, '', 1, 0, 1),
+(43, 'yousefahmed', '', 'yousef', 1994, 12, 10, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '1', 'yousef@gmail.com', '01010737793', '0000-00-00 00:00:00', '', '', '', '', 0, '', 0, 0, 1);
 
 --
 -- Indexes for dumped tables
@@ -509,7 +537,8 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id_product`),
   ADD KEY `idbrand` (`idbrand`),
   ADD KEY `idcat` (`idcat`),
-  ADD KEY `idspecies` (`idspecies`);
+  ADD KEY `idspecies` (`idspecies`),
+  ADD KEY `id_species` (`id_suppliers`);
 
 --
 -- Indexes for table `rate`
@@ -538,6 +567,19 @@ ALTER TABLE `stikers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `store`
+--
+ALTER TABLE `store`
+  ADD PRIMARY KEY (`id_store`),
+  ADD KEY `idsuppliers` (`idsuppliers`);
+
+--
+-- Indexes for table `suppliers`
+--
+ALTER TABLE `suppliers`
+  ADD PRIMARY KEY (`id_suppliers`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -551,72 +593,98 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id_address` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_address` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
   MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id_cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `main-slider`
 --
 ALTER TABLE `main-slider`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
 --
 -- AUTO_INCREMENT for table `rate`
 --
 ALTER TABLE `rate`
-  MODIFY `id_rate` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_rate` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
 --
 -- AUTO_INCREMENT for table `server`
 --
 ALTER TABLE `server`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `species`
 --
 ALTER TABLE `species`
-  MODIFY `id_species` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_species` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
 -- AUTO_INCREMENT for table `stikers`
 --
 ALTER TABLE `stikers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `store`
+--
+ALTER TABLE `store`
+  MODIFY `id_store` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `suppliers`
+--
+ALTER TABLE `suppliers`
+  MODIFY `id_suppliers` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
 --
 -- Constraints for dumped tables
 --
@@ -661,6 +729,13 @@ ALTER TABLE `product`
 ALTER TABLE `rate`
   ADD CONSTRAINT `rate_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `rate_ibfk_2` FOREIGN KEY (`pro_id`) REFERENCES `product` (`id_product`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `store`
+--
+ALTER TABLE `store`
+  ADD CONSTRAINT `store_ibfk_1` FOREIGN KEY (`idsuppliers`) REFERENCES `suppliers` (`id_suppliers`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
